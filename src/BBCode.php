@@ -34,29 +34,29 @@ final class BBCode
         return $this;
     }
 
-    public function stripBBCodeTags(string $text): string
+    public function stripBBCodeTags(string $text)
     {
         return $this->bbCodeParser->stripTags($text);
     }
 
-    public function convertFromHtml(string $text): string
+    public function convertFromHtml(string $text)
     {
         return $this->htmlParser->parse($text);
     }
 
-    public function convertToHtml(string $text, $caseSensitive = null): string
+    public function convertToHtml($text, $caseSensitive = null)
     {
         return $this->bbCodeParser->parse($text, $caseSensitive);
     }
 
-    public function addParser(string $name, string $pattern, string $replace, string $content)
+    public function addParser($name, $pattern, $replace, $content)
     {
         $this->bbCodeParser->addParser($name, $pattern, $replace, $content);
 
         return $this;
     }
-    
-    public function addHtmlParser(string $name, string $pattern, string $replace, string $content)
+
+    public function addHtmlParser($name, $pattern, $replace, $content)
     {
         $this->htmlParser->addParser($name, $pattern, $replace, $content);
 

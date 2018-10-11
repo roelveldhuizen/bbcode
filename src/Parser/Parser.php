@@ -12,7 +12,7 @@ class Parser
 
     protected $parsers = [];
 
-    protected function searchAndReplace(string $pattern, string $replace, string $source): string
+    protected function searchAndReplace($pattern, $replace, $source)
     {
         while (preg_match($pattern, $source)) {
             $source = preg_replace($pattern, $replace, $source);
@@ -25,7 +25,7 @@ class Parser
     {
         $only = is_array($only) ? $only : func_get_args();
 
-        $this->parsers = array_intersect_key($this->parsers, array_flip((array) $only));
+        $this->parsers = array_intersect_key($this->parsers, array_flip((array)$only));
 
         return $this;
     }
@@ -34,12 +34,12 @@ class Parser
     {
         $except = is_array($except) ? $except : func_get_args();
 
-        $this->parsers = array_diff_key($this->parsers, array_flip((array) $except));
+        $this->parsers = array_diff_key($this->parsers, array_flip((array)$except));
 
         return $this;
     }
 
-    public function addParser(string $name, string $pattern, string $replace, string $content)
+    public function addParser($name, $pattern, $replace, $content)
     {
         $this->parsers[$name] = [
             'pattern' => $pattern,
