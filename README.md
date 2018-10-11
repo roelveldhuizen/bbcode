@@ -8,8 +8,7 @@ BBCode
 > BBCode parser from or to HTML.
 
 ## Installation
-
-[PHP](https://php.net) 7.1+ is required. 
+[PHP](https://php.net) 5.6+ is required. 
 
 To get the latest version of BBCode, simply require the project using [Composer](https://getcomposer.org):
 
